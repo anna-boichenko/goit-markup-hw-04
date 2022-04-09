@@ -25,6 +25,7 @@ p {
   margin: 0;
 }
 
+
 /*Основные значения для страницы*/
 body {
   font-family: "Roboto", sans-serif;
@@ -72,7 +73,8 @@ header {
   margin-right: 50px;
 }
 .link-header {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -108,6 +110,7 @@ header {
 .contacts-header-ul .item:not(:last-child) {
   margin-right: 50px;
 }
+
 .studio-logo-header {
   color: var(--logo-color);
 }
@@ -120,9 +123,20 @@ header {
 .contacts-header {
   color: var(--secondary-font-color);
 }
+.contacts-header-icon {
+  margin-right: 10px;
+  fill: var(--secondary-font-color);
+}
+.link-header:hover .contacts-header-icon,
+.link-header:focus .contacts-header-icon {
+  fill: var(--accent-color);
+}
 
 /*Основная часть страницы*/
 .hero {
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+   url(../images/hero/hero.jpg);
+  background-size: cover;
   background-color: var(--secondary-background);
   padding-top: 200px;
   padding-bottom: 200px;
@@ -162,6 +176,14 @@ header {
 }
 
 /*Главные принципы работы*/
+.principles-image-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--secondary-color);
+}
 .principles-section {
   padding-bottom: 0px;
   padding-top: 94px;
@@ -176,6 +198,7 @@ header {
   margin-right: 30px;
 }
 .principles-heading {
+  margin-top: 30px;
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
@@ -228,6 +251,10 @@ header {
   background-color: var(--main-color);
   flex-basis: 270px;
   margin-right: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+  0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .member-card:nth-child(4n + 4) {
   margin-right: 0px;
@@ -235,6 +262,8 @@ header {
 .member-content-wrapper {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 .member-name {
   margin-bottom: 10px;
@@ -245,13 +274,66 @@ header {
   letter-spacing: 0.03em;
 }
 .member-position {
+  margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--secondary-font-color);
 }
-
+.social-list {
+  display: flex;
+  justify-content: space-between;
+}
+.social-list-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: var(--accent-color)
+}
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: var(--main-color);
+}
+.social-list-icon {
+  fill: #AFB1B8;
+}
+/*Постоянные клиенты*/
+.clients .secondary-heading {
+  margin-bottom: 50px;
+}
+.clients-list {
+  display: flex;
+}
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #AFB1B8;
+  border-radius: 4px;
+}
+.clients-icon {
+  fill: #AFB1B8;
+}
+.clients-link:hover,
+.clients-link:focus {
+border: 1px solid var(--accent-color);
+}
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  fill: var(--accent-color);
+}
 /*Футер*/
 .footer {
   background-color: var(--secondary-background);
@@ -296,6 +378,49 @@ header {
 .contacts-footer:focus {
   color: var(--accent-color);
 }
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+.contacts-container-footer {
+  min-width: 230px;
+  margin-right: 70px;
+}
+.social-footer {
+ display: block;
+ align-items: center;
+}
+.footer-social-list {
+  display: flex;
+}
+.social-footer-item:not(:last-child) {
+margin-right: 10px;
+}
+.social-footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #44454E;
+}
+.social-footer-icon {
+  fill: var(--main-color);
+}
+.social-footer-link:hover,
+.social-footer-link:focus {
+  background-color: var(--accent-color)
+}
+.join-social {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
 
 /*Фильтры-кнопки в портфолио*/
 .filter-list {
@@ -324,6 +449,9 @@ header {
 .filter-button:focus {
   color: var(--main-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+  0px 1px 2px rgba(0, 0, 0, 0.08),
+  0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /*Примеры работ*/
@@ -345,10 +473,20 @@ header {
 .work-card:nth-child(3n + 3) {
   margin-right: 0px;
 }
+.work-card:hover,
+.work-card:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+  0px 4px 4px rgba(0, 0, 0, 0.06),
+  1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .work-content-wrapper {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
+}
+.work-link {
+  text-decoration: none;
+  color: inherit;
 }
 .work-name {
   margin-bottom: 4px;
